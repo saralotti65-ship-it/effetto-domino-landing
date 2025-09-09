@@ -1,21 +1,20 @@
-/* Sfondi: desktop per default */
+/* Sfondo desktop di default */
 body {
-  background: url("sfondo-desktop.jpg") center center / cover no-repeat fixed;
+  background: url("SFONDO%20LANDING%20PAGE.jpg") center center / cover no-repeat fixed;
   font-family: sans-serif;
   color: #ef8f90;
   margin: 0;
 }
 
-/* Placeholder base (verrà sovrascritto dall'utility Tailwind nell'input) */
+/* Placeholder dell'input */
 input::placeholder {
   color: #ef8f90;
   opacity: 0.8;
 }
 
-/* Mobile / schermi "alti" (usa lo sfondo verticale) */
-@media (max-width: 768px), (max-aspect-ratio: 3/4) {
+/* Sfondo mobile (versione verticale) */
+@media (max-width: 768px), (orientation: portrait) {
   body {
-    background: url("sfondo-mobile.jpg") center center / cover no-repeat scroll;
-    /* su mobile il fixed può "saltare", quindi scroll = più fluido */
+    background: url("landing_page_sfondo.jpg") center center / cover no-repeat scroll;
   }
 }
