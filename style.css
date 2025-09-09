@@ -1,20 +1,23 @@
-/* style.css */
+/* Sfondo a pieno schermo, centrato, senza ripetizione */
+html, body {
+  min-height: 100dvh; /* altezza dinamica corretta su iOS/Android */
+}
+
 body {
   background: url("SFONDO%20LANDING%20PAGE.jpg") no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed; /* fisso su desktop */
   font-family: sans-serif;
   color: #ef8f90;
   margin: 0;
-  min-height: 100vh;
 }
 
+/* Placeholder più leggibile (bianco, opaco) */
 input::placeholder {
-  color: #ef8f90;
-  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.95);
 }
 
-/* mobile */
+/* Su mobile il background fixed dà problemi: lo rendiamo scroll */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
