@@ -1,22 +1,21 @@
-/* Stile generale del body */
+/* Sfondi: desktop per default */
 body {
-  background: url("SFONDO%20LANDING%20PAGE.jpg") no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed; /* fisso su desktop */
+  background: url("sfondo-desktop.jpg") center center / cover no-repeat fixed;
   font-family: sans-serif;
   color: #ef8f90;
   margin: 0;
 }
 
-/* Placeholder dell’input (colore base, ma sovrascritto da Tailwind nel box email) */
+/* Placeholder base (verrà sovrascritto dall'utility Tailwind nell'input) */
 input::placeholder {
   color: #ef8f90;
   opacity: 0.8;
 }
 
-/* Correzione per mobile */
-@media (max-width: 768px) {
+/* Mobile / schermi "alti" (usa lo sfondo verticale) */
+@media (max-width: 768px), (max-aspect-ratio: 3/4) {
   body {
-    background-attachment: scroll; /* adattabile su smartphone */
+    background: url("sfondo-mobile.jpg") center center / cover no-repeat scroll;
+    /* su mobile il fixed può "saltare", quindi scroll = più fluido */
   }
 }
