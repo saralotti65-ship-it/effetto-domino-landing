@@ -8,26 +8,23 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      background: url("SFONDO LANDING PAGE.jpg") no-repeat center center fixed;
+      background: url("sfondo-landing.jpg") no-repeat center center;
       background-size: cover;
+      background-attachment: fixed; /* effetto fisso su desktop */
       font-family: sans-serif;
+      color: #ef8f90;
     }
     input::placeholder {
       color: #ef8f90;
       opacity: 0.8;
+    }
+    /* correzione per mobile */
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll; /* adattabile su smartphone */
+      }
     }
   </style>
-    body {
-      background-color: #e53631;
-      color: #ef8f90;
-      font-family: sans-serif;
-    }
-    input::placeholder {
-      color: #ef8f90;
-      opacity: 0.8;
-    }
-</style>
-
 </head>
 <body class="h-screen flex flex-col justify-center items-center relative">
 
