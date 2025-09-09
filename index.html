@@ -5,31 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Landing Page</title>
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Collegamento al CSS personalizzato -->
-  <link rel="stylesheet" href="./style.css?v=2" />
+  <!-- Il tuo CSS -->
+  <link rel="stylesheet" href="./style.css?v=3" />
 </head>
-<body class="h-screen flex flex-col justify-center items-center relative bg-black">
+<body class="min-h-[100dvh] flex flex-col justify-center items-center relative px-4 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
 
-  <!-- Form -->
-  <div class="text-center w-full px-4">
-    <form class="flex flex-col items-center gap-4 max-w-md mx-auto w-full">
-      <input 
-        type="email" 
-        placeholder="Inserisci la tua email" 
+  <!-- Overlay scuro per migliorare la leggibilità sullo sfondo -->
+  <div class="absolute inset-0 bg-black/45 pointer-events-none"></div>
+
+  <!-- Contenuto -->
+  <main class="relative z-10 w-full max-w-md">
+    <form class="flex flex-col gap-4">
+      <label for="email" class="sr-only">Email</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="Inserisci la tua email"
         required
-        class="w-full px-5 py-4 text-lg rounded-xl border border-[#ef8f90] bg-transparent focus:outline-none text-center text-white placeholder-gray-300"
+        class="w-full px-5 py-4 text-[18px] rounded-xl
+               border border-white/60
+               bg-white/10 backdrop-blur-sm
+               text-white placeholder-white
+               shadow-lg
+               focus:outline-none focus:ring-2 focus:ring-white/85 focus:border-transparent"
       />
-      <button 
+
+      <button
         type="submit"
-        class="w-full px-6 py-4 text-lg rounded-xl font-bold bg-[#e53631] text-white hover:bg-[#ef8f90] hover:text-black transition"
+        class="w-full px-6 py-4 text-lg rounded-xl font-bold
+               bg-[#e53631] text-white
+               hover:bg-[#ef8f90] hover:text-black transition"
       >
         UNISCITI AL CAMBIAMENTO
       </button>
     </form>
-  </div>
-
+  </main>
 </body>
 </html>
