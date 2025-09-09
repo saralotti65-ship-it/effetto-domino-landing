@@ -1,8 +1,4 @@
-/* Sfondo a pieno schermo, centrato, senza ripetizione */
-html, body {
-  min-height: 100dvh; /* altezza dinamica corretta su iOS/Android */
-}
-
+/* Stile generale del body */
 body {
   background: url("SFONDO%20LANDING%20PAGE.jpg") no-repeat center center;
   background-size: cover;
@@ -12,14 +8,15 @@ body {
   margin: 0;
 }
 
-/* Placeholder più leggibile (bianco, opaco) */
+/* Placeholder dell’input (colore base, ma sovrascritto da Tailwind nel box email) */
 input::placeholder {
-  color: rgba(255, 255, 255, 0.95);
+  color: #ef8f90;
+  opacity: 0.8;
 }
 
-/* Su mobile il background fixed dà problemi: lo rendiamo scroll */
+/* Correzione per mobile */
 @media (max-width: 768px) {
   body {
-    background-attachment: scroll;
+    background-attachment: scroll; /* adattabile su smartphone */
   }
 }
