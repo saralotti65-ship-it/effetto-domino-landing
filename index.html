@@ -3,28 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </title>
+  <title>Landing Page</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- link a style.css (cache-busting) -->
+
+  <!-- Collegamento al CSS personalizzato -->
   <link rel="stylesheet" href="./style.css?v=2" />
 </head>
-<body class="h-screen flex flex-col justify-center items-center relative">
+<body class="h-screen flex flex-col justify-center items-center relative bg-black">
 
-  <h1 class="text-white text-6xl md:text-8xl font-extrabold drop-shadow-lg text-center -mt-32 mb-12">
-    
-  </h1>
-
+  <!-- Form -->
   <div class="text-center w-full px-4">
     <form class="flex flex-col items-center gap-4 max-w-md mx-auto w-full">
-      <input type="email" placeholder="Inserisci la tua email" required
-             class="w-full px-5 py-4 text-lg rounded-xl border border-[#ef8f90] bg-transparent focus:outline-none text-[#ef8f90] text-center" />
-      <button type="submit"
-              class="w-full px-6 py-4 text-lg rounded-xl font-bold bg-white text-[#e53631] hover:bg-[#ef8f90] hover:text-white transition">
+      <input 
+        type="email" 
+        placeholder="Inserisci la tua email" 
+        required
+        class="w-full px-5 py-4 text-lg rounded-xl border border-[#ef8f90] bg-transparent focus:outline-none text-center text-white placeholder-gray-300"
+      />
+      <button 
+        type="submit"
+        class="w-full px-6 py-4 text-lg rounded-xl font-bold bg-[#e53631] text-white hover:bg-[#ef8f90] hover:text-black transition"
+      >
         UNISCITI AL CAMBIAMENTO
       </button>
     </form>
   </div>
 
-  <div class="absolute bottom-4 right-4 text-xs text-white">TINDERXLALIBELLULA</div>
 </body>
 </html>
