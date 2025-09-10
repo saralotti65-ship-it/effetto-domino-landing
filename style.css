@@ -18,3 +18,22 @@ input::placeholder {
     background: url("landing_page_sfondo.jpg") center center / cover no-repeat scroll;
   }
 }
+
+/* ---- ANIMAZIONE LOGHI ---- */
+@keyframes logoUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20%);
+    opacity: 1;
+  }
+}
+
+.animate-logo-up {
+  animation: logoUp 1s ease-in-out forwards;
+}
