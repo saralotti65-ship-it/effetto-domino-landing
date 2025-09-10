@@ -5,28 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Landing Page</title>
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Collegamento al CSS -->
-  <link rel="stylesheet" href="./style.css?v=6" />
+  <link rel="stylesheet" href="./style.css?v=7" />
 </head>
-<body class="min-h-[100dvh] flex flex-col justify-center items-center relative">
+<body class="h-screen flex flex-col justify-center items-center relative overflow-hidden">
 
-  <!-- Form -->
   <div class="text-center w-full px-4">
     <form class="flex flex-col items-center gap-4 max-w-md mx-auto w-full">
       <input 
         type="email" 
         placeholder="Inserisci la tua email" 
         required
-        class="w-full px-5 py-4 text-lg rounded-xl 
-               border border-[#ef8f90] 
-               bg-white/80 text-black placeholder-gray-600
-               focus:outline-none focus:ring-2 focus:ring-[#ef8f90] text-center" 
+        class="w-full px-5 py-4 text-lg rounded-xl border border-[#ef8f90] bg-white/80 text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ef8f90] text-center" 
       />
       <button 
-        type="submit"
+        id="cta-button"
+        type="button"
         class="w-full px-6 py-4 text-lg rounded-xl font-bold bg-white text-[#e53631] hover:bg-[#ef8f90] hover:text-white transition"
       >
         UNISCITI AL CAMBIAMENTO
@@ -34,10 +28,17 @@
     </form>
   </div>
 
-  <!-- Credits -->
-  <div class="absolute bottom-4 right-4 text-xs text-white">
-    TINDERXLALIBELLULA
-  </div>
+  <!-- Loghi animati (inizialmente invisibili) -->
+  <img id="logo-tinder" src="logo-tinder.png" alt="Tinder" class="fixed bottom-0 left-1/3 w-16 opacity-0" />
+  <img id="logo-libellula" src="logo-libellula.png" alt="Libellula" class="fixed bottom-0 right-1/3 w-16 opacity-0" />
 
+  <script>
+    document.getElementById('cta-button').addEventListener('click', function(){
+      const tinder = document.getElementById('logo-tinder');
+      const libellula = document.getElementById('logo-libellula');
+      tinder.classList.add('animate-logo-up');
+      libellula.classList.add('animate-logo-up');
+    });
+  </script>
 </body>
 </html>
