@@ -5,18 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Landing Page</title>
 
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="./style.css?v=7" />
-</head>
-<body class="h-screen flex flex-col justify-center items-center relative overflow-hidden">
 
-  <div class="text-center w-full px-4">
+  <!-- Collegamento al CSS -->
+  <link rel="stylesheet" href="./style.css?v=8" />
+</head>
+<body class="min-h-[100dvh] flex flex-col justify-center items-center relative overflow-hidden">
+
+  <!-- Form -->
+  <div class="text-center w-full px-4 z-10">
     <form class="flex flex-col items-center gap-4 max-w-md mx-auto w-full">
       <input 
         type="email" 
         placeholder="Inserisci la tua email" 
         required
-        class="w-full px-5 py-4 text-lg rounded-xl border border-[#ef8f90] bg-white/80 text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-[#ef8f90] text-center" 
+        class="w-full px-5 py-4 text-lg rounded-xl 
+               border border-[#ef8f90] 
+               bg-white/80 text-black placeholder-gray-600
+               focus:outline-none focus:ring-2 focus:ring-[#ef8f90] text-center" 
       />
       <button 
         id="cta-button"
@@ -28,17 +35,44 @@
     </form>
   </div>
 
-  <!-- Loghi animati (inizialmente invisibili) -->
-  <img id="logo-tinder" src="logo-tinder.png" alt="Tinder" class="fixed bottom-0 left-1/3 w-16 opacity-0" />
-  <img id="logo-libellula" src="logo-libellula.png" alt="Libellula" class="fixed bottom-0 right-1/3 w-16 opacity-0" />
+  <!-- Container per i loghi animati -->
+  <div id="logo-container" class="absolute inset-0 pointer-events-none"></div>
 
+  <!-- Script animazioni -->
   <script>
-    document.getElementById('cta-button').addEventListener('click', function(){
-      const tinder = document.getElementById('logo-tinder');
-      const libellula = document.getElementById('logo-libellula');
-      tinder.classList.add('animate-logo-up');
-      libellula.classList.add('animate-logo-up');
+    const button = document.getElementById('cta-button');
+    const container = document.getElementById('logo-container');
+
+    button.addEventListener('click', () => {
+      for (let i = 0; i < 8; i++) { // quanti loghi generare per click
+        createFloatingLogo('logo-tinder.png');
+        createFloatingLogo('logo-libellula.png');
+      }
     });
+
+    function createFloatingLogo(src) {
+      const img = document.createElement('img');
+      img.src = src;
+      img.className = 'floating-logo';
+      
+      // Posizione casuale in orizzontale
+      img.style.left = Math.random() * 80 + 10 + '%';
+      
+      // Dimensioni casuali (tra 30 e 50px)
+      const size = Math.random() * 20 + 30;
+      img.style.width = size + 'px';
+
+      // Durata casuale (2-4s)
+      const duration = Math.random() * 2 + 2;
+      img.style.animationDuration = duration + 's';
+
+      container.appendChild(img);
+
+      // Rimuovi dopo l'animazione
+      setTimeout(() => {
+        img.remove();
+      }, duration * 1000);
+    }
   </script>
 </body>
 </html>
